@@ -17,7 +17,7 @@ st.set_page_config(
 st.title('Will this given costumer say yes?')
 
 #this is how you can add images e.g. from unsplash (or loca image file)
-st.image('https://www.google.com/url?sa=i&url=https%3A%2F%2Fecomia.dk%2Fbanker-og-sparekasser-i-danmark%2F&psig=AOvVaw1pcIzbaPK4NpwKtZQQ7Vq9&ust=1665040433215000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCOCp1I7FyPoCFQAAAAAdAAAAABAD', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
+#st.image('https://source.unsplash.com/0PSCd1wIrm4', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
 # use this decorator (--> @st.experimental_singleton) and 0-parameters function to only load and preprocess once
 @st.experimental_singleton
