@@ -74,33 +74,26 @@ st.markdown("### Nyt afsnit")
 # creating a single-element container.
 placeholder = st.empty()
 # dataframe filter 
-data = data[data['job']==job_filter]
+data = data[data['euribor3m']==job_filter]
 
 # near real-time / live feed simulation 
 for seconds in range(1):
 
     # creating KPIs 
-    avg_age = np.mean(data['age']) 
-
-    count_married = int(data[(data["marital"]=='married')]['marital'].count())
+    avg_rate = np.mean(data['euribor3m']) 
     
     with placeholder.container(): 
 # create two columns
-        age, married = st.columns(2)
+        rate = st.columns(1)
 
         # fill in those three columns with respective metrics or KPIs 
-        age.metric(label="Average Age ⏳", value=round(avg_age))
-        married.metric(label="Married Count 💍", value= int(count_married))
+        rate.metric(label="Average Age ⏳", value=round(avg_rate))
 
-        fig_col1, fig_col2 = st.columns(2)
+        fig_col1 = st.columns(1)
         with fig_col1:
             st.markdown("Age/Marital heatmap")
             fig = px.density_heatmap(data_frame=data, y = 'age', x = 'marital')
             st.write(fig)
-        with fig_col2:
-            st.markdown("Age distribution")
-            fig2 = px.histogram(data_frame = data, x = 'age')
-            st.write(fig2)
         st.markdown("### Detailed Data View")
         st.dataframe(data)
         time.sleep(1)
