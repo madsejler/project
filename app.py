@@ -85,8 +85,8 @@ if st.button('Deposit Prediction 💵'):
     # make a DF for categories and transform with one-hot-encoder
     new_df_cat = pd.DataFrame({'job':job,
                 'marital':marital,
-                'month': 'oct',
-                'day_of_week':'fri',
+                'month': 'oct', #This could be coded with a date.today().month function
+                'day_of_week':'fri', #This could aswell be coded with a function
                 'poutcome':poutcome}, index=[0])
     new_values_cat = pd.DataFrame(ohe.transform(new_df_cat), columns = cats , index=[0])
 
@@ -95,11 +95,11 @@ if st.button('Deposit Prediction 💵'):
                             'education': education,
                             'campaign': campaign,
                             'previous': previous, 
-                            'emp.var.rate': 1.1,
-                            'cons.price.idx': 93.994,
-                            'cons.conf.idx': -36.4,
-                            'euribor3m': 4.857,
-                            'nr.employed': 5191.0
+                            'emp.var.rate': 1.1, #This could be withdrawn from a site like Statistics Portugal
+                            'cons.price.idx': 93.994, #This could be withdrawn from a site like Statistics Portugal
+                            'cons.conf.idx': -36.4, #This could be withdrawn from a site like Statistics Portugal
+                            'euribor3m': 4.857, #This could be withdrawn from a site like Statistics Portugal
+                            'nr.employed': 5191.0 #This could be withdrawn from a site like Statistics Portugal
                         }, index=[0])
     new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
     
