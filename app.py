@@ -65,31 +65,31 @@ selected_marital = encode_marital(selected_marital)
 
 
     # selecting education
-    st.subheader("Select Customer's Education")
-    selected_education = st.radio("", df['education'].unique())
-    st.write("Selected Education:", selected_education)
+st.subheader("Select Customer's Education")
+selected_education = st.radio("", df['education'].unique())
+st.write("Selected Education:", selected_education)
 
     ## Encode the education entered by user
     ### Declaring function for encoding
-    def encode_education(selected_item):
+def encode_education(selected_item):
         dict_education = {'primary':0, 'secondary':1, 'tertiary':2, 'unknown':3}
         return dict_education.get(selected_item, 'No info available')
 
     ### Using function for encoding
-    selected_education = encode_education(selected_education)  
+selected_education = encode_education(selected_education)  
 
 
     # selecting default status
-    st.subheader("Select Customer's Default Status")
-    selected_default = st.radio("", df['default'].unique()[::-1])
-    st.write("Selected Default Status", selected_default)
+st.subheader("Select Customer's Default Status")
+selected_default = st.radio("", df['default'].unique()[::-1])
+st.write("Selected Default Status", selected_default)
 
 
     ## Encode the default entered by user
     ### Declaring function for encoding
-    def encode_default(selected_item):
+def encode_default(selected_item):
         dict_default = {'no':0, 'yes':1}
         return dict_default.get(selected_item, 'No info available')
 
     ### Using function for encoding
-    selected_default = encode_default(selected_default)  
+selected_default = encode_default(selected_default)  
