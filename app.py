@@ -20,7 +20,7 @@ st.title('Will this given costumer say yes?')
 #st.image('https://source.unsplash.com/0PSCd1wIrm4', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-data = data_raw[data_raw["education"].str.contains("unknown") == False]
+data = data[data["education"].str.contains("unknown") == False]
 
 # use this decorator (--> @st.experimental_singleton) and 0-parameters function to only load and preprocess once
 @st.experimental_singleton
