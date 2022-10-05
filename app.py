@@ -72,5 +72,5 @@ for seconds in range(1):
 # NYT AFSNIT
 st.markdown("### Live Market Information")
         # fill in those three columns with respective metrics or KPIs 
-        st.text('The rate is xxx')
+    st.text('The rate is xxx')
         time.sleep(1)
