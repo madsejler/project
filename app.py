@@ -85,7 +85,7 @@ for seconds in range(1):
         rate = st.columns(1)
 
         # fill in those three columns with respective metrics or KPIs 
-        rate.metric(label="Average Age ⏳", value=(avg_rate))
+        rate.metric(label="Average Age ⏳", value=(10))
 
         fig_col1 = st.columns(1)
         with fig_col1:
