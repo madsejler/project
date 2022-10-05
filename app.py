@@ -15,6 +15,8 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
 
+px.histogram(x=data['age'])
+
 st.set_page_config(
     page_title="Bank marketing prediction")
 
@@ -120,6 +122,3 @@ if st.button('Deposit Prediction 💵'):
     st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
     shap_value = explainer.shap_values(line_to_pred)
     st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
-
-
-    px.histogram(x=data['age'])
