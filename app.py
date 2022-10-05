@@ -70,18 +70,4 @@ for seconds in range(1):
         st.dataframe(data)
         time.sleep(1)
 # NYT AFSNIT
-    st.markdown("### Nyt afsnit")
-    for seconds in range(1):
-
-    # creating KPIs 
-    avg_age = np.mean(data['age']) 
-
-    count_married = int(data[(data["marital"]=='married')]['marital'].count())
-    
-    with placeholder.container(): 
-# create two columns
-        age, married = st.columns(2)
-
-        # fill in those three columns with respective metrics or KPIs 
-        age.metric(label="Average Age ⏳", value=round(avg_age))
-        married.metric(label="Married Count 💍", value= int(count_married))
+st.markdown("### Nyt afsnit")
