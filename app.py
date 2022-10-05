@@ -109,9 +109,10 @@ if st.button('Deposit Prediction 💵'):
 
     #print out result to user
      
-    st.metric(label="Predicted answer", if predicted_value==1: print('yes')')
-    
+    st.metric(label="Predicted answer", value=f'{predicted_value}')
+    st.subheader(f'Why {predicted_value}? 1 equals to yes, while 0 equals to no')
+
     #print SHAP explainer to user
-    st.subheader(f'Why {predicted_value}? See below:')
+    st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
     shap_value = explainer.shap_values(line_to_pred)
     st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
