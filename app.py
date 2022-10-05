@@ -55,7 +55,6 @@ for seconds in range(200):
 
     count_married = int(df[(df["marital"]=='married')]['marital'].count() + np.random.choice(range(1,30)))
     
-    balance = np.mean(df['balance_new'])
 
     with placeholder.container():
         # create three columns
