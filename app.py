@@ -150,7 +150,6 @@ with tab1:
             # make a DF for the numericals and standard scale
             new_df_num = pd.DataFrame({'age':age, 
                                     'education': education,
-                                    'previous': previous, 
                                 }, index=[0])
             new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
             
