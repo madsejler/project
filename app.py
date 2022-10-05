@@ -11,6 +11,11 @@ import itertools # we need that to flatten ohe.categories_ into one list for col
 import streamlit as st
 from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import seaborn as sns
+import plotly.express as px
+
 st.set_page_config(
     page_title="Bank marketing prediction")
 
