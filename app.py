@@ -55,12 +55,12 @@ st.write("Selected Marital:", selected_marital)
 
     ## Encode the marital entered by user
     ### Declaring function for encoding
-    def encode_marital(selected_item):
+def encode_marital(selected_item):
         dict_marital = {'divorced':0, 'married':1, 'single':2}
         return dict_marital.get(selected_item, 'No info available')
 
     ### Using function for encoding
-    selected_marital = encode_marital(selected_marital)  
+selected_marital = encode_marital(selected_marital)  
 
 
 
