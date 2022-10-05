@@ -150,13 +150,7 @@ with tab1:
             # make a DF for the numericals and standard scale
             new_df_num = pd.DataFrame({'age':age, 
                                     'education': education,
-                                    'campaign': campaign,
                                     'previous': previous, 
-                                    'emp.var.rate': 1.1, #This could be scraped from a site like Statistics Portugal
-                                    'cons.price.idx': 93.994, #This could be scraped from a site like Statistics Portugal
-                                    'cons.conf.idx': -36.4, #This could be scraped from a site like Statistics Portugal
-                                    'euribor3m': 4.857, #This could be scraped from a site like Statistics Portugal
-                                    'nr.employed': 5191.0 #This could be scraped from a site like Statistics Portugal
                                 }, index=[0])
             new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
             
