@@ -66,9 +66,9 @@ st.subheader("Select the Customer's Education")
 education = st.radio("", data['education'].unique())
 st.write("Selected Education:", education)
 def encode_education(selected_item):
-    dict_education = {'basic.4y':0, 'high.school':1, 'basic.6y':2, 'basic.9y':3, 'professional.course':4, 'university.degree':5, 
-'illiterate':6}
-    return dict_education.get(selected_item, 'No info available')
+    dict_education = {'basic.4y':1, 'high.school':4, 'basic.6y':2, 'basic.9y':3, 'professional.course':5, 'university.degree':6, 
+'illiterate':0}
+    return dict_education.get(selected_item)
 
 ### Using function for encoding
 education = encode_education(education) 
