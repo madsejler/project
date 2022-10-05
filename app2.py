@@ -20,15 +20,15 @@ import matplotlib.ticker as ticker
 tab1, tab4 = st.tabs(["", "UML"])
 with tab4: 
 
-    def read_objects():
-            model_xgb = pickle.load(open('model_xgb.pkl','rb'))
-            scaler = pickle.load(open('scaler.pkl','rb'))
-            ohe = pickle.load(open('ohe.pkl','rb'))
-            shap_values = pickle.load(open('shap_values.pkl','rb'))
-            cats = list(itertools.chain(*ohe.categories_))
-            return model_xgb, scaler, ohe, cats, shap_values
+            def read_objects():
+                model_xgb = pickle.load(open('model_xgb.pkl','rb'))
+                scaler = pickle.load(open('scaler.pkl','rb'))
+                ohe = pickle.load(open('ohe.pkl','rb'))
+                shap_values = pickle.load(open('shap_values.pkl','rb'))
+                cats = list(itertools.chain(*ohe.categories_))
+                return model_xgb, scaler, ohe, cats, shap_values
 
-        model_xgb, scaler, ohe, cats, shap_values = read_objects()
+            model_xgb, scaler, ohe, cats, shap_values = read_objects()
         ##
             data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
             with st.expander("UML"):
