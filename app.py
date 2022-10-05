@@ -108,8 +108,8 @@ if st.button('Deposit Prediction 💵'):
     predicted_value = model_xgb.predict(line_to_pred)[0]
 
     #print out result to user
-    if predicted_value==1: print('yes') 
-    #st.metric(label="Predicted answer", value=f'{predicted_value}')
+     
+    st.metric(label="Predicted answer", if predicted_value==1: print('yes')')
     
     #print SHAP explainer to user
     st.subheader(f'Why {predicted_value}? See below:')
