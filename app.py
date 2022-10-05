@@ -86,7 +86,6 @@ def currentMonth = datetime.now().month(selected_item):
     dict_month = {10:'oct', 'high.school':4, 'basic.6y':2, 'basic.9y':3, 'professional.course':5, 'university.degree':6, 
 'illiterate':0}
     return dict_month.get(selected_item)
-    currentMonth = datetime.now().month
     # make a DF for categories and transform with one-hot-encoder
     new_df_cat = pd.DataFrame({'job':job,
                 'marital':marital,
