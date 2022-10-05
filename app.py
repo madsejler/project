@@ -54,7 +54,7 @@ for seconds in range(200):
     count_married = int(df[(df["marital"]=='married')]['marital'].count())
     
 
-    # with placeholder.container():
+     with placeholder.container():
     #     # create three columns
     #     kpi1, kpi2 = st.columns(2)
 
