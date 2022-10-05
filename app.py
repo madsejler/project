@@ -19,6 +19,7 @@ import plotly.express as px
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
 data = data[data["education"].str.contains("unknown") == False]
+data = data[data["marital"].str.contains("unknown") == False]
 
 st.set_page_config(
     page_title = 'Data Dashboard',
