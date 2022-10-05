@@ -150,7 +150,7 @@ with tab1:
             # make a DF for the numericals and standard scale
             new_df_num = pd.DataFrame({'age':age, 
                                     'education': education,
-                                    'job':job,
+                                    'job':1,
                                     'housing': 1,
                                     'loan':1
                                 }, index=[0])
