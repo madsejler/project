@@ -140,7 +140,7 @@ with tab1:
         if st.button('Deposit Prediction 💵'):
 
             # make a DF for categories and transform with one-hot-encoder
-            new_df_cat = pd.DataFrame({
+            new_df_cat = pd.DataFrame({'job':job,
                         'marital':marital,
                         'month': 'oct', #This could be coded with a date.today().month function
                         'day_of_week':'fri', #This could aswell be coded with a function
