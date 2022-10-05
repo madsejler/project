@@ -14,7 +14,6 @@ from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
-import seaborn as sns
 
 st.set_page_config(
     page_title="Bank marketing prediction")
@@ -157,7 +156,7 @@ if option == 'Age':
     st.write('Here are the age frequencies count for 3 dataframes.')
     st.subheader('Bank data')
     fig1 = plt.figure()
-    age_freq = sns.countplot(x=data['age'])
+    age_freq = px.histogram(x=data['age'])
     age_freq.set_xticklabels(age_freq.get_xticklabels(), rotation=40, ha="right")
     age_freq.xaxis.set_major_locator(ticker.MultipleLocator(5))
     st.pyplot(fig1)
