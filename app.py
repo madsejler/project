@@ -59,8 +59,12 @@ st.subheader("Select the Customer's Marital")
 marital = st.radio("", ohe.categories_[1])
 st.write("Selected Marital:", marital)
 
+st.subheader("Select the Customer's Education")
+education = st.radio("", data['education'].unique())
+st.write("Selected Education:", education)
+
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
-education = st.number_input('Education', min_value=0, max_value=7)
+#education = st.number_input('Education', min_value=0, max_value=7)
 campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
 previous = st.number_input('How many times have you contacted this client before?', min_value=0, max_value=35)
 
