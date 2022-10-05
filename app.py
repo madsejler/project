@@ -53,8 +53,6 @@ for seconds in range(200):
 
     count_married = int(df[(df["marital"]=='married')]['marital'].count())
     
-
-    with placeholder.container(): 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
             st.markdown("Age/Marital heatmap")
