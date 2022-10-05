@@ -14,7 +14,7 @@ from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
-
+import time
 
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
@@ -71,4 +71,4 @@ for seconds in range(200):
             st.write(fig2)
         st.markdown("### Detailed Data View")
         st.dataframe(data)
-    
+        time.sleep(1)
