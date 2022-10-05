@@ -114,7 +114,7 @@ if st.button('Deposit Prediction 💵'):
 
     st.subheader( 
         a = predicted_value
-        b = no
+         b = no
         if b > a:
             print("no")
         elif a == b:
