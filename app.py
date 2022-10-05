@@ -70,9 +70,9 @@ for seconds in range(10):
         st.dataframe(data)
         time.sleep(1)
 # NYT AFSNIT
-st.markdown("### Live Market Information2")
-now2 = datetime.now()
-current_time = now2.strftime("%H:%M:%S")
+st.markdown("### Live Market Information")
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
 st.markdown(print("Current Time =", current_time))
 st.markdown('The euribor 3 month rate is **1.173%** right now')
 st.markdown('**4.899.800** people are employed right now')
