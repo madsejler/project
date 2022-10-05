@@ -115,9 +115,9 @@ if st.button('Deposit Prediction 💵'):
     a = predicted_value
     b = 1
     if b > a:
-    print("no")
+        print("no")
     elif a == b:
-    print("yes")
+        print("yes")
 
     #print SHAP explainer to user
     st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
