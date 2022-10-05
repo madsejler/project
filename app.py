@@ -53,11 +53,11 @@ for seconds in range(200):
     
     with placeholder.container(): 
 # create three columns
-        kpi1, kpi2 = st.columns(2)
+        age, married = st.columns(2)
 
         # fill in those three columns with respective metrics or KPIs 
-        kpi1.metric(label="Average Age ⏳", value=round(avg_age), delta= round(avg_age) - 10)
-        kpi2.metric(label="Married Count 💍", value= int(count_married))
+        age.metric(label="Average Age ⏳", value=round(avg_age))
+        mariied.metric(label="Married Count 💍", value= int(count_married))
 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
