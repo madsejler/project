@@ -11,6 +11,8 @@ import itertools # we need that to flatten ohe.categories_ into one list for col
 import streamlit as st
 from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 
+from datetime import datetime
+
 st.set_page_config(
     page_title="Bank marketing prediction")
 
@@ -79,10 +81,12 @@ previous = st.number_input('How many times have you contacted this client before
 
 # make a nice button that triggers creation of a new data-line in the format that the model expects and prediction
 if st.button('Deposit Prediction 💵'):
+
+    currentMonth = datetime.now().month
     # make a DF for categories and transform with one-hot-encoder
     new_df_cat = pd.DataFrame({'job':job,
                 'marital':marital,
-                'month': 'oct',
+                'month': currentMonth,
                 'day_of_week':'fri',
                 'poutcome':poutcome}, index=[0])
     new_values_cat = pd.DataFrame(ohe.transform(new_df_cat), columns = cats , index=[0])
