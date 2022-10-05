@@ -111,6 +111,11 @@ if st.button('Deposit Prediction 💵'):
 
     #print out result to user
     st.metric(label="Predicted answer", value=f'{predicted_value}')
+    if st.metric:
+    if(predicted_value == 1):
+        st.success('This customer segment will Deposit')
+    else:
+        st.success('This customer segment will NOT Deposit')  
     
     #print SHAP explainer to user
     st.subheader(f'Why {predicted_value}? See below:')
