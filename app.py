@@ -94,8 +94,4 @@ if st.button('Predict! 🚀'):
 
 
     ### EDA TAB
-chart_data = pd.DataFrame(
-    np.random.randn(20, 1),
-    columns=['age'])
-
-st.line_chart(chart_data)
+st.line_chart(data=X, *, x=age, y=None, width=10, height=10, use_container_width=True)
