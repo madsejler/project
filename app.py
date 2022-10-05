@@ -5,6 +5,8 @@ import pickle # un-pickling stuff from training notebook
 from xgboost import XGBRegressor # we use a trained XGBoost model...and therefore need to load it
 from sklearn.preprocessing import StandardScaler
 import shap # add prediction explainability
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
 
 import numpy as np
 import itertools # we need that to flatten ohe.categories_ into one list for columns
