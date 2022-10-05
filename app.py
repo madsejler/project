@@ -45,13 +45,9 @@ data = data[data['job']==job_filter]
 # near real-time / live feed simulation 
 
 for seconds in range(200):
-#while True: 
-    
-    data['age1'] = data['age'] * np.random.choice(range(1,5))
-    data['marital1'] = data['marital'] * np.random.choice(range(1,5))
 
     # creating KPIs 
-    avg_age = np.mean(data['age1']) 
+    avg_age = np.mean(data['age']) 
 
     count_married = int(data[(data["marital"]=='married')]['marital'].count() + np.random.choice(range(1,30)))
     
