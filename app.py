@@ -80,7 +80,7 @@ for seconds in range(1):
     
     with placeholder.container(): 
 # create two columns
-    age, married = st.columns(2)
+        age, married = st.columns(2)
 
         # fill in those three columns with respective metrics or KPIs 
         age.metric(label="Average Age ⏳", value=round(avg_age))
