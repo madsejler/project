@@ -15,8 +15,6 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
 
-px.histogram(data, x="Age")
-
 st.set_page_config(
     page_title="Bank marketing prediction")
 
