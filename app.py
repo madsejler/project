@@ -32,23 +32,23 @@ st.write("Selected Age:", selected_age)
 
 
     # selecting job
-    st.subheader("Select Customer's Job")
-    selected_job = st.radio("", df['job'].unique(), index = 3)
-    st.write("Selected Job:", selected_job)
+st.subheader("Select Customer's Job")
+selected_job = st.radio("", df['job'].unique(), index = 3)
+st.write("Selected Job:", selected_job)
 
 
     ## Encode the job entered by user
     ### Declaring function for encoding
-    def encode_job(selected_item):
-        dict_job = {'admin.':0, 'blue-collar':1, 'entrepreneur':2, 'housemaid':3, 'management':4, 'retired':5, 'self-employed':6, 'services':7, 'student':8, 'technician':9, 'unemployed':10, 'unknown':11}
-        return dict_job.get(selected_item, 'No info available')
+def encode_job(selected_item):
+    dict_job = {'admin.':0, 'blue-collar':1, 'entrepreneur':2, 'housemaid':3, 'management':4, 'retired':5, 'self-employed':6, 'services':7, 'student':8, 'technician':9, 'unemployed':10, 'unknown':11}
+    return dict_job.get(selected_item, 'No info available')
 
     ### Using function for encoding
-    selected_job = encode_job(selected_job)  
+selected_job = encode_job(selected_job)  
 
 
     # selecting marital status
-    st.subheader("Select Customer's Marital")
+st.subheader("Select Customer's Marital")
     selected_marital = st.radio("", df['marital'].unique())
     st.write("Selected Marital:", selected_marital)
 
