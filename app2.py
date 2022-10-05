@@ -19,7 +19,7 @@ import matplotlib.ticker as ticker
 
 tab1, tab4 = st.tabs(["Data Exploration", "UML"])
 with tab4: 
-            data1 = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
+            data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
             with st.expander("UML"):
                 st.title("Unsupervised Machine Learning")
                 st.subheader('This will be a journey through the creation of UML customer segmentation, and an analysis of the obtained result.')
