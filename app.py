@@ -43,7 +43,7 @@ with st.expander("What's that app?"):
     As a little extra 🌟, we added an AI explainer 🤖 to understand factors driving prices up or down.
     """)
 
-st.subheader('Costumer description')
+st.title('Costumer description')
 
 #Below all the bank client's info will be selected
 st.subheader("Select the Customer's Age")
