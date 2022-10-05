@@ -47,11 +47,15 @@ data = data[data['job']==job_filter]
 for seconds in range(200):
 #while True: 
     
+    df['age_new'] = df['age'] * np.random.choice(range(1,5))
+    df['balance_new'] = df['balance'] * np.random.choice(range(1,5))
 
     # creating KPIs 
-    avg_age = np.mean(data['age']) 
+    avg_age = np.mean(df['age_new']) 
 
-    count_married = int(data[(data["marital"]=='married')]['marital'].count())
+    count_married = int(df[(df["marital"]=='married')]['marital'].count() + np.random.choice(range(1,30)))
+    
+    balance = np.mean(df['balance_new'])
     
     with placeholder.container(): 
         fig_col1, fig_col2 = st.columns(2)
