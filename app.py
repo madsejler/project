@@ -95,7 +95,8 @@ if st.button('Predict! 🚀'):
 
     ### EDA TAB
     data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-    chart_data = pd.DataFrame(
-    columns=['age'])
-
-    st.line_chart(chart_data)
+   
+    byYear_attack = data.groupby('job')['marital'].count().reset_index()
+    year_fig = px.line(byYear_attack,x='job', y='marital', labels={'index':'','x':'Attack Count'}, title='Shark Attack by Year')
+    year_fig.update_traces(line_color='#149e14')
+    year_fig.show() 
