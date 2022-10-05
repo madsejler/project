@@ -14,6 +14,7 @@ from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
+import seaborn as sns
 
 st.set_page_config(
     page_title="Bank marketing prediction")
