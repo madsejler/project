@@ -75,6 +75,6 @@ st.markdown("### Live Market Information")
 now = datetime.now()
 
 current_time = now.strftime("%H:%M:%S")
-st.subheader(print("Current Time =", current_time))
-
+st.markdown(print("Current Time =", current_time))
+st.time_input(current_time)
 st.subheader('The rate is xxx')
