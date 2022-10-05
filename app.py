@@ -49,7 +49,7 @@ for seconds in range(200):
     # creating KPIs 
     avg_age = np.mean(data['age']) 
 
-    count_married = int(data[(data["marital"]=='married')]['marital'].count() + np.random.choice(range(1,30)))
+    count_married = int(data[(data["marital"]=='married')]['marital'].count())
     
     with placeholder.container(): 
 # create three columns
