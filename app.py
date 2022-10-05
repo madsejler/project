@@ -57,7 +57,7 @@ for seconds in range(200):
 
         # fill in those three columns with respective metrics or KPIs 
         age.metric(label="Average Age ⏳", value=round(avg_age))
-        mariied.metric(label="Married Count 💍", value= int(count_married))
+        married.metric(label="Married Count 💍", value= int(count_married))
 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
