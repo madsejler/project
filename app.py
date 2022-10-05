@@ -38,14 +38,11 @@ job_filter = st.selectbox("Select the Job", pd.unique(data['job']))
 
 # creating a single-element container.
 placeholder = st.empty()
-
 # dataframe filter 
-
 data = data[data['job']==job_filter]
 
 # near real-time / live feed simulation 
-
-for seconds in range(200):
+#for seconds in range(200):
 
     # creating KPIs 
     avg_age = np.mean(data['age']) 
@@ -53,7 +50,7 @@ for seconds in range(200):
     count_married = int(data[(data["marital"]=='married')]['marital'].count())
     
     with placeholder.container(): 
-# create three columns
+# create two columns
         age, married = st.columns(2)
 
         # fill in those three columns with respective metrics or KPIs 
@@ -71,4 +68,4 @@ for seconds in range(200):
             st.write(fig2)
         st.markdown("### Detailed Data View")
         st.dataframe(data)
-        time.sleep(1)
+        #time.sleep(1)
