@@ -49,7 +49,10 @@ st.subheader('Costumer description')
 job = st.selectbox('What is his/hers jobtype?', options=ohe.categories_[0])
 marital = st.radio('Marital', options=ohe.categories_[1])
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
-age = st.number_input('Age?', min_value=17, max_value=98)
+st.subheader("Select Customer's Age")
+age = st.slider("Select Customer's Age", min_value = 17, max_value = 98, 
+                         step = 1, value = 41)    # Slider does not tolerate dtype value mismatch df.age.max() was thus not used.
+st.write("Selected Age:", age)
 education = st.number_input('Education', min_value=0, max_value=7)
 campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
 previous = st.number_input('How many times have you contacted this client before?', min_value=0, max_value=35)
