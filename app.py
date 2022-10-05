@@ -94,4 +94,4 @@ if st.button('Predict! 🚀'):
 
 
     ### EDA TAB
-st.line_chart(data=X, *, x=age, y=None, width=10, height=10, use_container_width=True)
+    data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
