@@ -44,10 +44,9 @@ explainer = shap.TreeExplainer(model_xgb)
 #write some markdown blah
 with st.expander("What's that app?"):
     st.markdown("""
-    This app will help you determine what you should be asking people to pay per night for staying at your awesome place.
-    We trained an AI on successful places in Copenhagen. It will give you a pricing suggestion given a few inputs.
-    We recommend going around 350kr up or down depending on the amenities that you can provide and the quality of your place.
-    As a little extra 🌟, we added an AI explainer 🤖 to understand factors driving prices up or down.
+    This app will help you determine if you should call a given costumer! 💵 💴 💶 💷
+    It can further help you reconsider your strategic approach to the costumer,
+    in the case that our SML model will predict a "No" from the costumer.
     """)
 
 st.title('Costumer description')
