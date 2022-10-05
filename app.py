@@ -71,9 +71,7 @@ for seconds in range(1):
         time.sleep(1)
 # NYT AFSNIT
 st.markdown("### Live Market Information")
-
-now = datetime.now()
-
-current_time = now.strftime("%H:%M:%S")
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
 st.markdown(print("Current Time =", current_time))
 st.subheader('The rate is xxx')
