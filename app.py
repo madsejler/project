@@ -120,4 +120,4 @@ if st.button('Deposit Prediction 💵'):
     #print SHAP explainer to user
     st.subheader(f'Why {predicted_value}? See below:')
     shap_value = explainer.shap_values(line_to_pred)
-    st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=1000)
+    st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
