@@ -114,10 +114,9 @@ if st.button('Deposit Prediction 💵'):
 
     st.subheader( 
         a = predicted_value
-         b = no
-        if b > a:
+        if no > a:
             print("no")
-        elif a == b:
+        elif a == no:
             print("yes"))
 
     #print SHAP explainer to user
