@@ -61,7 +61,7 @@ for seconds in range(200):
             st.write(fig)
         with fig_col2:
             st.markdown("Age distribution")
-            fig2 = px.histogram(data_frame = data, x = 'age')
+            fig2 = px.line(data_frame = data, x = 'age')
             st.write(fig2)
         st.markdown("### Detailed Data View")
         st.dataframe(data)
