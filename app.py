@@ -49,8 +49,8 @@ selected_job = encode_job(selected_job)
 
     # selecting marital status
 st.subheader("Select Customer's Marital")
-    selected_marital = st.radio("", df['marital'].unique())
-    st.write("Selected Marital:", selected_marital)
+selected_marital = st.radio("", df['marital'].unique())
+st.write("Selected Marital:", selected_marital)
 
 
     ## Encode the marital entered by user
