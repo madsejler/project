@@ -29,7 +29,7 @@ with tab4:
             return model_xgb, scaler, ohe, cats, shap_values
 
         model_xgb, scaler, ohe, cats, shap_values = read_objects()
-        
+        ##
             data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
             with st.expander("UML"):
                 st.title("Unsupervised Machine Learning")
