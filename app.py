@@ -11,8 +11,6 @@ import itertools # we need that to flatten ohe.categories_ into one list for col
 import streamlit as st
 from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 
-from datetime import datetime
-
 st.set_page_config(
     page_title="Bank marketing prediction")
 
@@ -108,12 +106,11 @@ if st.button('Deposit Prediction 💵'):
 
     #run prediction for 1 new observation
     predicted_value = model_xgb.predict(line_to_pred)[0]
-    predicted_value1 = {1:'yes', 0:'no'}
 
     #print out result to user
-    st.metric(label="Predicted answer", value=f'{predicted_value1}')
+    st.metric(label="Predicted answer", value=f'{predicted_value}')
     
     #print SHAP explainer to user
-    st.subheader(f'Why {predicted_value1}? See below:')
+    st.subheader(f'Why {predicted_value}? See below:')
     shap_value = explainer.shap_values(line_to_pred)
     st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
