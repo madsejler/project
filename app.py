@@ -69,3 +69,5 @@ for seconds in range(200):
         st.markdown("### Detailed Data View")
         st.dataframe(data)
         time.sleep(1)
+# NYT AFSNIT
+st.markdown("### Nyt afsnit")
