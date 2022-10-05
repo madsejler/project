@@ -45,6 +45,7 @@ explainer = shap.TreeExplainer(model_xgb)
 with st.expander("What's that app?"):
     st.markdown("""
     This app will help you determine if you should call a given costumer! 💵 💴 💶 💷
+    
     It can further help you reconsider your strategic approach to the costumer,
     in the case that our SML model will predict a "No" from the costumer.
     """)
