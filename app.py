@@ -52,7 +52,7 @@ age = st.slider("", min_value = 17, max_value = 98,
 st.write("Selected Age:", age)
 
 st.subheader("Select the Customer's Jobtype")
-job = st.radio("", ohe.categories_[0], index = 1)
+job = st.radio("", ohe.categories_[0], index = 0)
 st.write("Selected Job:", job)
 
 marital = st.radio('Marital', options=ohe.categories_[1])
