@@ -136,7 +136,7 @@ if option == 'Data Summary':
     st.write('Here is some summary calculations of the data, I splitted into 3 dataframes for better understanding.')
     if st.sidebar.checkbox('Raw data sets'):
         st.subheader('Bank data')
-        st.dataframe(bank_data.head())
+        st.dataframe(data.head())
         st.subheader('yes_df:')
         st.dataframe(yes_df.head())
         st.subheader('no_df:')
@@ -156,7 +156,7 @@ if option == 'Age':
     st.write('Here are the age frequencies count for 3 dataframes.')
     st.subheader('Bank data')
     fig1 = plt.figure()
-    age_freq = sns.countplot(x=bank_data['age'])
+    age_freq = sns.countplot(x=data['age'])
     age_freq.set_xticklabels(age_freq.get_xticklabels(), rotation=40, ha="right")
     age_freq.xaxis.set_major_locator(ticker.MultipleLocator(5))
     st.pyplot(fig1)
