@@ -1,4 +1,4 @@
-# Load packages (comments for more special stuff)
+# Load all relevant packages
 
 import pandas as pd
 import pickle # un-pickling stuff from training notebook
@@ -20,13 +20,11 @@ st.set_page_config(
 
 st.title('Will this given costumer say yes?')
 
-#this is how you can add images e.g. from unsplash (or loca image file)
 st.image('https://source.unsplash.com/WgUHuGSWPVM', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
 data = data[data["education"].str.contains("unknown") == False]
 
-# use this decorator (--> @st.experimental_singleton) and 0-parameters function to only load and preprocess once
 @st.experimental_singleton
 def read_objects():
     model_xgb = pickle.load(open('model_xgb.pkl','rb'))
@@ -38,14 +36,13 @@ def read_objects():
 
 model_xgb, scaler, ohe, cats, shap_values = read_objects()
 
-# define explainer
+#Explainer defined
 explainer = shap.TreeExplainer(model_xgb)
 
-#write some markdown blah
-with st.expander("What's that app?"):
+with st.expander("What's the purpose of this app?"):
     st.markdown("""
     This app will help you determine if you should call a given costumer! 💵 💴 💶 💷
-    
+
     It can further help you reconsider your strategic approach to the costumer,
     in the case that our SML model will predict a "No" from the costumer.
     """)
@@ -81,7 +78,7 @@ poutcome = st.selectbox('What was the previous outcome for this costumer?', opti
 campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
 previous = st.number_input('How many times have you contacted this client before?', min_value=0, max_value=35)
 
-# make a nice button that triggers creation of a new data-line in the format that the model expects and prediction
+#Button for predicting the costumers answer
 if st.button('Deposit Prediction 💵'):
 
     # make a DF for categories and transform with one-hot-encoder
@@ -105,18 +102,18 @@ if st.button('Deposit Prediction 💵'):
                         }, index=[0])
     new_values_num = pd.DataFrame(scaler.transform(new_df_num), columns = new_df_num.columns, index=[0])  
     
-    #bring all columns together
+    #Bringing all columns together
     line_to_pred = pd.concat([new_values_num, new_values_cat], axis=1)
 
-    #run prediction for 1 new observation
+    #Run prediction for the new observation. Inputs to this given above
     predicted_value = model_xgb.predict(line_to_pred)[0]
     
     
-    #print out result to user 
+    #Printing the result
     st.metric(label="Predicted answer", value=f'{predicted_value}')
     st.subheader(f'Why {predicted_value}? 1 equals to yes, while 0 equals to no')
 
-    #print SHAP explainer to user
+    #Printing SHAP explainer
     st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
     shap_value = explainer.shap_values(line_to_pred)
     st_shap(shap.force_plot(explainer.expected_value, shap_value, line_to_pred), height=400, width=900)
