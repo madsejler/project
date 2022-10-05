@@ -42,7 +42,7 @@ placeholder = st.empty()
 data = data[data['job']==job_filter]
 
 # near real-time / live feed simulation 
-for seconds in range(15):
+for seconds in range(100):
 
     # creating metrices 
     avg_age = np.mean(data['age']) 
