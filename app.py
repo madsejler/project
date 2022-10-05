@@ -72,7 +72,8 @@ for seconds in range(3):
 # Live Market Information. If we had more time we would like to do some scraping for a site like statistic Portugal, to get the real euribor rate. For now it's just manually writting
 st.markdown("### Live Market Information")
 now = datetime.now()
-st.text("The Current Time:")
 current_time = now.strftime("%H:%M:%S")
+st.text("The Current Time:")
+st.time_input(current_time)
 st.markdown('The euribor 3 month rate is **1.173%** right now')
 st.markdown('**4.899.800** people are employed right now')
