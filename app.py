@@ -106,18 +106,11 @@ if st.button('Deposit Prediction 💵'):
 
     #run prediction for 1 new observation
     predicted_value = model_xgb.predict(line_to_pred)[0]
-    no = 0
-    #print out result to user
-     
+    
+    
+    #print out result to user 
     st.metric(label="Predicted answer", value=f'{predicted_value}')
     st.subheader(f'Why {predicted_value}? 1 equals to yes, while 0 equals to no')
-
-    st.subheader( 
-        a = predicted_value
-        if no > a:
-            print("no")
-        elif a == no:
-            print("yes"))
 
     #print SHAP explainer to user
     st.subheader(f'Lets explain why the model predicts the output above! See below for SHAP value:')
