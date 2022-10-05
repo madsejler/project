@@ -93,7 +93,7 @@ if st.button('Predict! 🚀'):
 
 
     ### EDA TAB
-     st.subheader('Dataframe:')
+    st.subheader('Dataframe:')
     n, m = df.shape
     st.write(f'<p style="font-size:130%">Dataset contains {n} rows and {m} columns.</p>', unsafe_allow_html=True)   
     st.dataframe(df)
