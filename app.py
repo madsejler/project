@@ -106,7 +106,7 @@ if st.button('Deposit Prediction 💵'):
 
     #run prediction for 1 new observation
     predicted_value = model_xgb.predict(line_to_pred)[0]
-
+    no = 0
     #print out result to user
      
     st.metric(label="Predicted answer", value=f'{predicted_value}')
@@ -114,7 +114,7 @@ if st.button('Deposit Prediction 💵'):
 
     st.subheader( 
         a = predicted_value
-        b = 1
+        b = no
         if b > a:
             print("no")
         elif a == b:
