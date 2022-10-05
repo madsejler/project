@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import plotly.express as px
 import time
-
+from datetime import datetime
 
 data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
 data = data[data["education"].str.contains("unknown") == False]
@@ -71,11 +71,10 @@ for seconds in range(1):
         time.sleep(1)
 # NYT AFSNIT
 st.markdown("### Live Market Information")
-from datetime import datetime
 
 now = datetime.now()
 
 current_time = now.strftime("%H:%M:%S")
-print("Current Time =", current_time)
+st.subheader(print("Current Time =", current_time))
 
 st.subheader('The rate is xxx')
