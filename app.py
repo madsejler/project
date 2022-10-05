@@ -44,7 +44,7 @@ data = data[data['job']==job_filter]
 # near real-time / live feed simulation 
 for seconds in range(3):
 
-    # creating KPIs 
+    # creating metrices 
     avg_age = np.mean(data['age']) 
 
     count_married = int(data[(data["marital"]=='married')]['marital'].count())
@@ -53,7 +53,7 @@ for seconds in range(3):
 # create two columns
         age, married = st.columns(2)
 
-        # fill in those three columns with respective metrics or KPIs 
+        # fill in those two columns with respective metrics 
         age.metric(label="Average Age ⏳", value=round(avg_age))
         married.metric(label="Married Count 💍", value= int(count_married))
 
@@ -72,7 +72,7 @@ for seconds in range(3):
 # Live Market Information. If we had more time we would like to do some scraping for a site like statistic Portugal, to get the real euribor rate. For now it's just manually writting
 st.markdown("### Live Market Information")
 now = datetime.now()
+st.text("The Current Time:")
 current_time = now.strftime("%H:%M:%S")
-st.time_input(current_time)
 st.markdown('The euribor 3 month rate is **1.173%** right now')
 st.markdown('**4.899.800** people are employed right now')
