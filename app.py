@@ -70,28 +70,7 @@ for seconds in range(1):
         st.dataframe(data)
         time.sleep(1)
 # NYT AFSNIT
-st.markdown("### Nyt afsnit")
-# creating a single-element container.
-placeholder = st.empty()
-
-# near real-time / live feed simulation 
-for seconds in range(1):
-
-    # creating KPIs 
-    avg_rate = np.mean(data['euribor3m']) 
-    
-    with placeholder.container(): 
-# create two columns
-        eur = st.columns(1)
-
+st.markdown("### Live Market Information")
         # fill in those three columns with respective metrics or KPIs 
         st.text('The rate is xxx')
-
-        fig_col1 = st.columns(1)
-        with fig_col1:
-            st.markdown("Age/Marital heatmap")
-            fig = px.density_heatmap(data_frame=data, y = 'age', x = 'marital')
-            st.write(fig)
-        st.markdown("### Detailed Data View")
-        st.dataframe(data)
         time.sleep(1)
