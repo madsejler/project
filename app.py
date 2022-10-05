@@ -157,7 +157,6 @@ if option == 'Age':
     st.subheader('Bank data')
     fig1 = plt.figure()
     age_freq = px.histogram(x=data['age'])
-    age_freq.xaxis.set_major_locator(ticker.MultipleLocator(5))
     st.pyplot(fig1)
     st.subheader('yes_df')
     fig2 = plt.figure()
