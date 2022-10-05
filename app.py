@@ -70,7 +70,7 @@ for seconds in range(1):
         st.dataframe(data)
         time.sleep(1)
 # NYT AFSNIT
-st.markdown("### Live Market Information")
+st.markdown("### Live Market Information2")
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 st.markdown(print("Current Time =", current_time))
