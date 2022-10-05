@@ -73,4 +73,3 @@ for seconds in range(1):
 st.markdown("### Live Market Information")
         # fill in those three columns with respective metrics or KPIs 
 st.text('The rate is xxx')
-        time.sleep(1)
