@@ -17,7 +17,7 @@ import time
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 
-tab1, tab4 = st.tabs(["Data Exploration", "UML"])
+tab4 = st.tabs(["UML"])
 with tab4: 
             data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
             with st.expander("UML"):
