@@ -71,7 +71,7 @@ for seconds in range(10):
         time.sleep(1)
 # NYT AFSNIT
 st.markdown("### Live Market Information2")
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
+now = datetime.now()
+current_time = now.strftime("%H:%M:%S")
 st.markdown(print("Current Time =", current_time))
 st.markdown('The euribor 3 month rate is 1.173% right now')
