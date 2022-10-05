@@ -95,4 +95,8 @@ if st.button('Predict! 🚀'):
 
     ### EDA TAB
     data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-    st.line_chart(data)
+    chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['age'])
+
+    st.line_chart(chart_data)
