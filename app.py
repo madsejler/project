@@ -65,6 +65,12 @@ st.write("Selected Marital:", marital)
 st.subheader("Select the Customer's Education")
 education = st.radio("", data['education'].unique())
 st.write("Selected Education:", education)
+def encode_education(selected_item):
+    dict_education = {'high.school':0, 'secondary':1, 'tertiary':2, 'unknown':3}
+    return dict_education.get(selected_item, 'No info available')
+
+### Using function for encoding
+education = encode_education(education) 
 
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
 #education = st.number_input('Education', min_value=0, max_value=7)
