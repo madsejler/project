@@ -71,7 +71,7 @@ for seconds in range(1):
         time.sleep(1)
 # NYT AFSNIT
     st.markdown("### Nyt afsnit")
-        for seconds in range(1):
+    for seconds in range(1):
 
     # creating KPIs 
         avg_age = np.mean(data['age']) 
