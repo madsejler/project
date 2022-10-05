@@ -208,3 +208,4 @@ with tab1:
             have that problem with the XGB-model, so we went ahead and used the XGB for the prediction model on this webpage """)
         with tab4:
             st.markdown("Due to an late error we couldnt make this tab work with the other. Therefore please see this streamlit for tab 4, which is a presentation of our UML")
+            st.markdown("https://madsejler-project-app2-hno3g8.streamlitapp.com/")
