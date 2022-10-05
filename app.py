@@ -71,6 +71,11 @@ for seconds in range(1):
         time.sleep(1)
 # NYT AFSNIT
 st.markdown("### Live Market Information")
-        # fill in those three columns with respective metrics or KPIs 
+from datetime import datetime
+
+now = datetime.now()
+
+current_time = now.strftime("%H:%M:%S")
+print("Current Time =", current_time)
 
 st.subheader('The rate is xxx')
