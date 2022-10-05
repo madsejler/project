@@ -23,7 +23,7 @@ st.title('Will this given costumer say yes?')
 st.image('https://source.unsplash.com/WgUHuGSWPVM', caption=None, width=None, use_column_width=None, clamp=False, channels="RGB", output_format="auto")
 
 df = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-df = data[data["education"].str.contains("unknown") == False]
+df = df[df["education"].str.contains("unknown") == False]
 
 st.set_page_config(
     page_title = 'Real-Time Data Science Dashboard',
