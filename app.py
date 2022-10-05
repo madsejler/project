@@ -17,22 +17,22 @@ import plotly.express as px
 
 
 
-df = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
-df = df[df["education"].str.contains("unknown") == False]
+data = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
+data = data[data["education"].str.contains("unknown") == False]
 
 st.set_page_config(
-    page_title = 'Real-Time Data Science Dashboard',
+    page_title = 'Data Dashboard',
     page_icon = '✅',
     layout = 'wide'
 )
 
 # dashboard title
 
-st.title("Real-Time / Live Data Science Dashboard")
+st.title("Data Dashboard")
 
 # top-level filters 
 
-job_filter = st.selectbox("Select the Job", pd.unique(df['job']))
+job_filter = st.selectbox("Select the Job", pd.unique(data['job']))
 
 
 # creating a single-element container.
@@ -40,7 +40,7 @@ placeholder = st.empty()
 
 # dataframe filter 
 
-df = df[df['job']==job_filter]
+data = data[data['job']==job_filter]
 
 # near real-time / live feed simulation 
 
@@ -49,20 +49,20 @@ for seconds in range(200):
     
 
     # creating KPIs 
-    avg_age = np.mean(df['age']) 
+    avg_age = np.mean(data['age']) 
 
-    count_married = int(df[(df["marital"]=='married')]['marital'].count())
+    count_married = int(data[(data["marital"]=='married')]['marital'].count())
     
     with placeholder.container(): 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
             st.markdown("Age/Marital heatmap")
-            fig = px.density_heatmap(data_frame=df, y = 'age', x = 'marital')
+            fig = px.density_heatmap(data_frame=data, y = 'age', x = 'marital')
             st.write(fig)
         with fig_col2:
             st.markdown("Age distribution")
-            fig2 = px.histogram(data_frame = df, x = 'age')
+            fig2 = px.histogram(data_frame = data, x = 'age')
             st.write(fig2)
         st.markdown("### Detailed Data View")
-        st.dataframe(df)
+        st.dataframe(data)
     
