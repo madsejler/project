@@ -93,6 +93,40 @@ if st.button('Predict! 🚀'):
 
 
     ### EDA TAB
+st.set_page_config(layout = "wide", page_icon = 'logo.png', page_title='EDA')
+
+st.header("🎨Exploratory Data Analysis Tool for Data Science Projects")
+
+st.write('<p style="font-size:160%">You will be able to✅:</p>', unsafe_allow_html=True)
+
+st.write('<p style="font-size:100%">&nbsp 1. See the whole dataset</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 2. Get column names, data types info</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 3. Get the count and percentage of NA values</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 4. Get descriptive analysis </p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 5. Check inbalance or distribution of target variable:</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 6. See distribution of numerical columns</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 7. See count plot of categorical columns</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 8. Get outlier analysis with box plots</p>', unsafe_allow_html=True)
+st.write('<p style="font-size:100%">&nbsp 9. Obtain info of target value variance with categorical columns</p>', unsafe_allow_html=True)
+#st.image('header2.png', use_column_width = True)
+
+functions.space()
+st.write('<p style="font-size:130%">Import Dataset</p>', unsafe_allow_html=True)
+
+file_format = st.radio('Select file format:', ('csv', 'excel'), key='file_format')
+dataset = st.file_uploader(label = '')
+
+use_defo = st.checkbox('Use example Dataset')
+if use_defo:
+    dataset = 'CarPrice_Assignment.csv'
+
+st.sidebar.header('Import Dataset to Use Available Features: 👉')
+
+if dataset:
+    if file_format == 'csv' or use_defo:
+        df = pd.read_csv(dataset)
+    else:
+        df = pd.read_excel(dataset)
     st.subheader('Dataframe:')
     n, m = df.shape
     st.write(f'<p style="font-size:130%">Dataset contains {n} rows and {m} columns.</p>', unsafe_allow_html=True)   
