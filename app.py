@@ -54,17 +54,7 @@ for seconds in range(200):
     count_married = int(df[(df["marital"]=='married')]['marital'].count())
     
 
-    with placeholder.container():
-    #     # create three columns
-    #     kpi1, kpi2 = st.columns(2)
-
-    #     # fill in those three columns with respective metrics or KPIs 
-    #     kpi1.metric(label="Age ⏳", value=round(avg_age), delta= round(avg_age) - 10)
-    #     kpi2.metric(label="Married Count 💍", value= int(count_married), delta= - 10 + count_married)
-    
-
-        # create two columns for charts 
-
+    with placeholder.container(): 
         fig_col1, fig_col2 = st.columns(2)
         with fig_col1:
             st.markdown("Age/Marital heatmap")
@@ -76,4 +66,4 @@ for seconds in range(200):
             st.write(fig2)
         st.markdown("### Detailed Data View")
         st.dataframe(df)
-    #placeholder.empty()
+    
