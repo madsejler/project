@@ -206,3 +206,5 @@ with tab1:
             st.markdown("""Due to some technical issues with the Logistic regression, we decided to use the XGB Classifier
             for the model anyways, because the LR-model seems to do limited ietrations on the training data. We did not 
             have that problem with the XGB-model, so we went ahead and used the XGB for the prediction model on this webpage """)
+        with tab4:
+            st.markdown("Due to an late error we couldnt make this tab work with the other. Therefore please see this streamlit for tab 4, which is a presentation of our UML")
