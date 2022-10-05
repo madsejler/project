@@ -13,7 +13,7 @@ import streamlit as st
 from streamlit_shap import st_shap # wrapper to display nice shap viz in the app
 
     ### EDA TAB
-    df = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
+df = pd.read_csv("https://raw.githubusercontent.com/Ceges98/BDS-Project/main/bank_marketing.csv", sep=";")
    
 
 
