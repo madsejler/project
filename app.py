@@ -51,11 +51,10 @@ age = st.slider("", min_value = 17, max_value = 98,
                          step = 1, value = 41)
 st.write("Selected Age:", age)
 
-st.subheader("Select Customer's Job")
-job = st.radio("", ohe.categories_[0], index = 3)
+st.subheader("Select the Customer's Jobtype")
+job = st.radio("", ohe.categories_[0], index = 1)
 st.write("Selected Job:", job)
 
-#job = st.selectbox('What is his/hers jobtype?', options=ohe.categories_[0])
 marital = st.radio('Marital', options=ohe.categories_[1])
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
 education = st.number_input('Education', min_value=0, max_value=7)
