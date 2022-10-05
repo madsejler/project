@@ -55,7 +55,11 @@ st.subheader("Select the Customer's Jobtype")
 job = st.radio("", ohe.categories_[0], index = 0)
 st.write("Selected Job:", job)
 
-marital = st.radio('Marital', options=ohe.categories_[1])
+st.subheader("Select the Customer's Marital")
+marital = st.radio("", ohe.categories_[1])
+st.write("Selected Marital:", marital)
+
+#marital = st.radio('Marital', options=ohe.categories_[1])
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
 education = st.number_input('Education', min_value=0, max_value=7)
 campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
