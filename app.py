@@ -65,21 +65,20 @@ st.write("Selected Marital:", marital)
 st.subheader("Select the Customer's Education")
 education = st.radio("", data['education'].unique())
 st.write("Selected Education:", education)
+#Defining a encoding function for education
 def encode_education(selected_item):
     dict_education = {'basic.4y':1, 'high.school':4, 'basic.6y':2, 'basic.9y':3, 'professional.course':5, 'university.degree':6, 
 'illiterate':0}
     return dict_education.get(selected_item)
-
-### Using function for encoding
+### Using function for encoding on education
 education = encode_education(education) 
 
 poutcome = st.selectbox('What was the previous outcome for this costumer?', options=ohe.categories_[4])
-#education = st.number_input('Education', min_value=0, max_value=7)
 campaign = st.number_input('How many contacts have you made for this costumer for this campagin already?', min_value=0, max_value=35)
 previous = st.number_input('How many times have you contacted this client before?', min_value=0, max_value=35)
 
 # make a nice button that triggers creation of a new data-line in the format that the model expects and prediction
-if st.button('Predict! 🚀'):
+if st.button('Deposit Prediction 💵'):
     # make a DF for categories and transform with one-hot-encoder
     new_df_cat = pd.DataFrame({'job':job,
                 'marital':marital,
