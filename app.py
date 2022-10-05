@@ -57,7 +57,7 @@ for seconds in range(200):
     
     with placeholder.container(): 
 # create three columns
-        kpi1, kpi2 = st.columns(3)
+        kpi1, kpi2 = st.columns(2)
 
         # fill in those three columns with respective metrics or KPIs 
         kpi1.metric(label="Age ⏳", value=round(avg_age), delta= round(avg_age) - 10)
